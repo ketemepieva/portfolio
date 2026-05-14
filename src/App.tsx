@@ -117,7 +117,10 @@ const LARAVEL_SPONSORS: { name: string; href: string }[] = [
 /** Affiché en tête de page — à ajuster si besoin. */
 const AUTHOR_DISPLAY_NAME = "KETEMEPI Fidella Maeva";
 
+const CV_FILE = "CV_Fidella_Maeva_Ketemepi_professionnel.pdf";
+
 export default function App() {
+  const cvHref = `${import.meta.env.BASE_URL}${CV_FILE}`;
   return (
     <div className="page">
       <header className="header">
@@ -160,6 +163,13 @@ export default function App() {
             </a>
             <a className="btn btn--ghost" href="#laravel">
               Laravel
+            </a>
+            <a
+              className="btn btn--cv"
+              href={cvHref}
+              download={CV_FILE}
+            >
+              Télécharger le CV (PDF)
             </a>
           </div>
           <p className="hero__hint mono">

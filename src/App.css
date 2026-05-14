@@ -177,6 +177,18 @@
   opacity: 1;
 }
 
+.btn--cv {
+  background: rgba(15, 118, 110, 0.35);
+  color: #ecfdf5;
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  box-shadow: none;
+}
+
+.btn--cv:hover {
+  background: rgba(15, 118, 110, 0.55);
+  opacity: 1;
+}
+
 .hero__actions--row {
   margin-bottom: 1rem;
 }
