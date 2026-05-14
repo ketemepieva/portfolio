@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "cv:pdf": "python scripts/generate_cv_pdf.py"
   },
   "dependencies": {
     "react": "^19.0.0",

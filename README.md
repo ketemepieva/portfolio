@@ -41,3 +41,13 @@ Le dépôt est configuré avec `base: /portfolio/` et un workflow GitHub Actions
 ### Dépannage : erreur « main.tsx » / type MIME `text/html`
 
 Cela signifie que le navigateur charge encore les **sources** au lieu du build. Corrigez la source Pages (**GitHub Actions**) comme ci-dessus, puis relancez le workflow (**Actions → Deploy GitHub Pages → Re-run all jobs**).
+
+## CV PDF (mise à jour)
+
+Prérequis Python : `pip install reportlab pillow`, puis :
+
+```bash
+npm run cv:pdf
+```
+
+Le fichier `public/CV_Fidella_Maeva_Ketemepi_professionnel.pdf` est régénéré (photo `public/cv-photo.png`). Le script tente aussi de copier le PDF vers le dossier Cursor d’origine si accessible.

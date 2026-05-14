@@ -1,7 +1,11 @@
 .page {
   max-width: var(--max);
   margin: 0 auto;
-  padding: 0 1.25rem 4rem;
+  padding: 0 max(1.25rem, env(safe-area-inset-left, 0px)) 4rem
+    max(1.25rem, env(safe-area-inset-right, 0px));
+  width: 100%;
+  overflow-x: clip;
+  box-sizing: border-box;
 }
 
 .header {
@@ -9,12 +13,12 @@
   top: 0;
   z-index: 10;
   padding: 1rem 0;
-  margin: 0 -1.25rem;
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
+  margin: 0;
+  width: 100%;
   background: color-mix(in srgb, var(--bg) 88%, transparent);
   backdrop-filter: blur(10px);
   border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
 }
 
 .header__inner {
@@ -24,6 +28,7 @@
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
+  min-width: 0;
 }
 
 .logo {
@@ -35,6 +40,8 @@
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+  min-width: 0;
+  max-width: 100%;
 }
 
 .logo__brand {
@@ -46,6 +53,8 @@
   background-clip: text;
   color: transparent;
   text-shadow: 0 0 40px rgba(45, 212, 191, 0.25);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .logo__suffix {
@@ -63,6 +72,7 @@
   gap: 0.75rem 1.25rem;
   font-size: 0.9rem;
   font-weight: 500;
+  min-width: 0;
 }
 
 .nav a {
@@ -99,7 +109,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
-  filter: drop-shadow(0 0 28px rgba(45, 212, 191, 0.35));
+  text-shadow: 0 0 24px rgba(45, 212, 191, 0.35);
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .hero__strapline {
@@ -173,6 +185,7 @@
   font-size: 0.8rem;
   color: var(--text-muted);
   margin: 0;
+  overflow-wrap: anywhere;
 }
 
 .section {
@@ -548,6 +561,9 @@
   color: #a7f3d0;
   overflow-x: auto;
   white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  max-width: 100%;
 }
 
 .deploy__list {
@@ -584,6 +600,12 @@
   border-top: 1px solid var(--border);
   font-size: 0.85rem;
   color: var(--text-muted);
+}
+
+.footer p {
+  margin: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
 }
 
 .footer__author {
