@@ -4,6 +4,10 @@ Site statique (React + Vite + TypeScript) présentant les projets SkillSwap, ana
 
 ## Développement local
 
+Avec `base: "/portfolio/"`, ouvrez l’URL affichée par Vite, en général :
+
+**http://localhost:5173/portfolio/**
+
 ```bash
 npm install
 npm run dev
@@ -19,8 +23,21 @@ Les fichiers générés sont dans `dist/`.
 
 ## GitHub Pages
 
-Le dépôt est configuré avec `base: /portfolio/` et un workflow GitHub Actions qui publie le build sur Pages après chaque push sur `main`.
+Le dépôt est configuré avec `base: /portfolio/` et un workflow GitHub Actions qui publie le dossier **`dist/`** (build Vite), pas les sources.
 
-1. Sur GitHub : **Settings → Pages** : source **GitHub Actions** (pas « Deploy from a branch »).
-2. Après le premier workflow réussi, le site est disponible à  
-   `https://ketemepieva.github.io/portfolio/`
+### Mise en place (obligatoire)
+
+1. Sur GitHub : **Settings → Pages**.
+2. **Build and deployment → Source** : choisir **GitHub Actions**.
+3. Si **« Deploy from a branch »** est encore actif (branche `main`, dossier `/`), **désactivez-le** ou basculez sur Actions : sinon Pages sert le `index.html` **source** qui pointe vers `/src/main.tsx` → erreur MIME / page blanche dans la console.
+
+4. Onglet **Actions** : vérifiez que le workflow **Deploy GitHub Pages** est vert. Sinon, ouvrez le run en échec et lisez les logs.
+
+5. URL du site (dépôt nommé `portfolio`) :  
+   **https://ketemepieva.github.io/portfolio/**  
+
+   Ce n’est **pas** `https://ketemepieva.github.io/` seul (cela correspond au dépôt spécial `username.github.io`, autre projet).
+
+### Dépannage : erreur « main.tsx » / type MIME `text/html`
+
+Cela signifie que le navigateur charge encore les **sources** au lieu du build. Corrigez la source Pages (**GitHub Actions**) comme ci-dessus, puis relancez le workflow (**Actions → Deploy GitHub Pages → Re-run all jobs**).
