@@ -129,6 +129,27 @@
   color: var(--accent);
 }
 
+.hero__contact {
+  margin: 0 0 1.25rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.15rem 0.35rem;
+}
+
+.hero__contact a {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.hero__contact-sep {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
 .hero__lead {
   margin: 0 0 2rem;
   max-width: 36rem;

@@ -277,14 +277,17 @@ def build_story(styles: dict[str, ParagraphStyle], photo_path: Path) -> list:
 
     hero_left = vstack_table(
         [
-            Paragraph("KETEMEPI Fidella Maeva", styles["hero_name"]),
+            Paragraph("Fidella Maeva KETEMEPI", styles["hero_name"]),
             Paragraph(
-                "Génie informatique · Développement web &amp; data",
+                "Licence en développement logiciel · Web &amp; data",
                 styles["hero_tag"],
             ),
             Paragraph(
                 "Lomé, Togo<br/>"
-                "Tél. : <b>à compléter</b> · E-mail : <b>à compléter</b>",
+                "Tél. : <a href=\"tel:+22899053226\" color='#ecfdf5'><u>+228 99 05 32 26</u></a> / "
+                "<a href=\"tel:+22890140530\" color='#ecfdf5'><u>+228 90 14 05 30</u></a><br/>"
+                "E-mail : <a href=\"mailto:ketemepifidellamaeva@gmail.com\" color='#ecfdf5'>"
+                "<u>ketemepifidellamaeva@gmail.com</u></a>",
                 styles["hero_contact"],
             ),
         ],
@@ -371,10 +374,11 @@ def build_story(styles: dict[str, ParagraphStyle], photo_path: Path) -> list:
             [
                 Paragraph(
                     esc(
-                        "Profil orienté relation client et projets numériques. En formation en "
-                        "génie informatique, je relie aisance communicationnelle, sens du service "
-                        "et pratique concrète du développement web, de l’analyse de données et des "
-                        "bases SQL — avec une approche structurée et rigoureuse."
+                        "Je suis Fidella Maeva KETEMEPI, titulaire d’une licence en développement "
+                        "logiciel. Profil orienté relation client et projets numériques ; en poursuite "
+                        "de formation en génie informatique, je relie aisance communicationnelle, sens "
+                        "du service et pratique concrète du développement web, de l’analyse de données "
+                        "et des bases SQL — avec une approche structurée et rigoureuse."
                     ),
                     styles["body"],
                 ),
@@ -391,6 +395,7 @@ def build_story(styles: dict[str, ParagraphStyle], photo_path: Path) -> list:
             [
                 Paragraph(
                     esc(
+                        "<b>Licence en développement logiciel</b> — diplôme obtenu. "
                         "<b>Génie informatique</b> — formation en cours. "
                         "Projets personnels et académiques : applications web full-stack, "
                         "data science appliquée, sensibilisation aux bonnes pratiques (versioning, déploiement)."
@@ -500,8 +505,8 @@ def main() -> None:
         rightMargin=MARGIN_X,
         topMargin=MARGIN_Y,
         bottomMargin=MARGIN_Y,
-        title="CV — KETEMEPI Fidella Maeva",
-        author="KETEMEPI Fidella Maeva",
+        title="CV — Fidella Maeva KETEMEPI",
+        author="Fidella Maeva KETEMEPI",
     )
     doc.build(build_story(styles, photo))
     print(f"PDF généré : {OUT_PDF}")

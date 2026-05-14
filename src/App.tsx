@@ -114,9 +114,10 @@ const LARAVEL_SPONSORS: { name: string; href: string }[] = [
   { name: "Active Logic", href: "https://activelogic.com" },
 ];
 
-/** Affiché en tête de page — à ajuster si besoin. */
-const AUTHOR_DISPLAY_NAME = "KETEMEPI Fidella Maeva";
+/** Nom affiché (ordre prénom · nom). */
+const AUTHOR_DISPLAY_NAME = "Fidella Maeva KETEMEPI";
 
+const CONTACT_EMAIL = "ketemepifidellamaeva@gmail.com";
 const CV_FILE = "CV_Fidella_Maeva_Ketemepi_professionnel.pdf";
 
 export default function App() {
@@ -140,16 +141,27 @@ export default function App() {
 
       <main>
         <section className="hero">
-          <p className="hero__eyebrow">Projets</p>
+          <p className="hero__eyebrow">Bonjour</p>
           <h1 className="hero__name">{AUTHOR_DISPLAY_NAME}</h1>
           <p className="hero__strapline">
-            Web, <em>données</em> et <em>santé</em>
+            <em>Licence en développement logiciel</em> — web, <em>données</em> et{" "}
+            <em>santé</em>
+          </p>
+          <p className="hero__contact mono">
+            <a href="tel:+22899053226">99 05 32 26</a>
+            <span className="hero__contact-sep"> / </span>
+            <a href="tel:+22890140530">90 14 05 30</a>
+            <span className="hero__contact-sep"> · </span>
+            <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>
           </p>
           <p className="hero__lead">
-            SkillSwap (full-stack), TP analyse des ventes (Python / SQLite),
-            cadrage ALPHA_LAB (santé), et <strong>Laravel</strong> côté PHP pour des
-            applications web robustes — selon la documentation officielle du
-            framework.
+            Je suis <strong>Fidella Maeva KETEMEPI</strong>, titulaire d&apos;une{" "}
+            <strong>licence en développement logiciel</strong>. Basée à Lomé (Togo),
+            je partage ici une sélection de projets : application full-stack{" "}
+            <strong>SkillSwap</strong>, analyse de données avec <strong>Python</strong>{" "}
+            et <strong>SQLite</strong>, cadrage <strong>ALPHA_LAB</strong> (santé), et
+            une rubrique <strong>Laravel</strong> (PHP) pour compléter le paysage
+            technique.
           </p>
           <div className="hero__actions hero__actions--row">
             <a className="btn btn--primary" href="#skillswap">
