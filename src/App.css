@@ -27,9 +27,33 @@
 }
 
 .logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+  line-height: 1.15;
   font-weight: 700;
   letter-spacing: -0.02em;
   color: var(--text);
+}
+
+.logo__brand {
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  background: linear-gradient(120deg, #ecfdf5 0%, #5eead4 45%, #2dd4bf 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: 0 0 40px rgba(45, 212, 191, 0.25);
+}
+
+.logo__suffix {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
 }
 
 .nav {
@@ -63,16 +87,32 @@
   color: var(--accent);
 }
 
-.hero__title {
-  margin: 0 0 1.25rem;
+.hero__name {
+  margin: 0 0 0.65rem;
+  padding: 0.15rem 0;
   font-family: var(--font-display);
-  font-size: clamp(2.25rem, 5vw, 3.35rem);
+  font-size: clamp(2.75rem, 9vw, 4.25rem);
   font-weight: 400;
-  line-height: 1.15;
-  letter-spacing: -0.02em;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  background: linear-gradient(125deg, #f0fdfa 0%, #99f6e4 35%, #2dd4bf 55%, #0d9488 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  filter: drop-shadow(0 0 28px rgba(45, 212, 191, 0.35));
 }
 
-.hero__title em {
+.hero__strapline {
+  margin: 0 0 1.35rem;
+  font-family: var(--font-display);
+  font-size: clamp(1.35rem, 4vw, 2rem);
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: var(--text);
+}
+
+.hero__strapline em {
   font-style: italic;
   color: var(--accent);
 }
@@ -546,7 +586,8 @@
   color: var(--text-muted);
 }
 
-.footer p {
-  margin: 0;
-  max-width: 36rem;
+.footer__author {
+  font-weight: 700;
+  color: var(--accent);
+  font-style: normal;
 }

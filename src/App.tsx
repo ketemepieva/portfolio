@@ -114,13 +114,17 @@ const LARAVEL_SPONSORS: { name: string; href: string }[] = [
   { name: "Active Logic", href: "https://activelogic.com" },
 ];
 
+/** Affiché en tête de page — à ajuster si besoin. */
+const AUTHOR_DISPLAY_NAME = "KETEMEPI Fidella Maeva";
+
 export default function App() {
   return (
     <div className="page">
       <header className="header">
         <div className="header__inner">
           <a className="logo" href="#">
-            Portfolio
+            <span className="logo__brand">{AUTHOR_DISPLAY_NAME}</span>
+            <span className="logo__suffix">Portfolio</span>
           </a>
           <nav className="nav">
             <a href="#skillswap">SkillSwap</a>
@@ -134,9 +138,10 @@ export default function App() {
       <main>
         <section className="hero">
           <p className="hero__eyebrow">Projets</p>
-          <h1 className="hero__title">
+          <h1 className="hero__name">{AUTHOR_DISPLAY_NAME}</h1>
+          <p className="hero__strapline">
             Web, <em>données</em> et <em>santé</em>
-          </h1>
+          </p>
           <p className="hero__lead">
             SkillSwap (full-stack), TP analyse des ventes (Python / SQLite),
             cadrage ALPHA_LAB (santé), et <strong>Laravel</strong> côté PHP pour des
@@ -604,8 +609,9 @@ dashboard.ipynb       # notebook (optionnel)`}
 
       <footer className="footer">
         <p>
-          Portfolio — SkillSwap, TP Analyse des ventes, ALPHA_LAB, socle Laravel
-          (PHP). Liens GitHub et captures au fil de l&apos;avancement.
+          <strong className="footer__author">{AUTHOR_DISPLAY_NAME}</strong> — Portfolio
+          (SkillSwap, analyse des ventes, ALPHA_LAB, Laravel). Liens GitHub et
+          captures au fil de l&apos;avancement.
         </p>
       </footer>
     </div>
